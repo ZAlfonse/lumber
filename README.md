@@ -25,14 +25,14 @@ etc..
 
 
 ###Color codes:
-| Log Level | Color Code |
-|-----------|------------|
-| TRACE     | 32m        |
-| DEBUG     | 35m        |
-| SUCCESS   | 32m        |
-| INFO      | 36m        |
-| WARNING   | 31m        |
-| ERROR     | 31m        |
+| Log Level | Color Code | Supposed to be |
+|-----------|------------|----------------|
+| TRACE     | 32m        | Green          |
+| DEBUG     | 35m        | Purple         |
+| SUCCESS   | 32m        | Green          |
+| INFO      | 36m        | Cyan           |
+| WARNING   | 31m        | Red            |
+| ERROR     | 31m        | Red            |
 
 ###Looks like:
 ![](https://s.alfnz.com/pUOkI.png)
