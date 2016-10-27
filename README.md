@@ -1,5 +1,5 @@
 # Lumber
-ANSI Logging module. Each log type has it's own color.
+ANSI Logging module for Go. Each log type has it's own color!!
 
 ###Initialize a new logger like so: 
 
