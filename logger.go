@@ -23,11 +23,13 @@ type Log struct {
 	colorCode string
 }
 
+//Log.println Mimic the internal println function of the log module so we can wrap in colors
 func (l *Log) println(v ...interface{}) {
 	s := fmt.Sprintf("\033[1;%v%v\033[0m\n", l.colorCode, fmt.Sprint(v...))
 	l.Logger.Output(2, s)
 }
 
+//newLog Create a new simple wrapped log object
 func newLog(out io.Writer, prefix string, flag int, colorCode string) *Log {
 	return &Log{
 		log.New(out, prefix, flag),
@@ -35,7 +37,7 @@ func newLog(out io.Writer, prefix string, flag int, colorCode string) *Log {
 	}
 }
 
-//Logger aa
+//Logger The logger object containing each of the wrapped log objects
 type Logger struct {
 	TraceLog   Log
 	DebugLog   Log
@@ -45,37 +47,41 @@ type Logger struct {
 	ErrorLog   Log
 }
 
-//Trace aa
+//Trace Forward to the trace logger
 func (l *Logger) Trace(v ...interface{}) {
 	l.TraceLog.println(v)
 }
 
-//Debug aa
+//Debug Forward to the debug logger
 func (l *Logger) Debug(v ...interface{}) {
 	l.DebugLog.println(v)
 }
 
-//Success aa
+//Success Forward to the success logger
 func (l *Logger) Success(v ...interface{}) {
 	l.SuccessLog.println(v)
 }
 
-//Info aa
+//Info Forward to the info logger
 func (l *Logger) Info(v ...interface{}) {
 	l.InfoLog.println(v)
 }
 
-//Warning aa
+//Warning ..
+// Forward to the warning logger
 func (l *Logger) Warning(v ...interface{}) {
 	l.WarningLog.println(v)
 }
 
-//Error aa
+//Error ..
+// Error Forward to the error logger
 func (l *Logger) Error(v ...interface{}) {
 	l.ErrorLog.println(v)
 }
 
-//NewLogger aaa
+//NewLogger ..
+// Create a new logger object and direct outputs to various io.Writers
+// Levels are TRACE, DEBUG, INFO, QUIET, SILENT
 func NewLogger(loglevel int) *Logger {
 
 	var (
