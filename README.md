@@ -6,7 +6,7 @@ ANSI Logging module for Go. Each log type has it's own color!!
 `logger = lumber.NewLogger(lumber.TRACE)`
 
 
-###6 Levels of logging:
+### 6 Levels of logging:
 - `lumber.TRACE`
 - `lumber.DEBUG`
 - `lumber.SUCCESS`
@@ -15,7 +15,7 @@ ANSI Logging module for Go. Each log type has it's own color!!
 - `lumber.ERROR`
 
 
-###Log by calling:
+### Log by calling:
 
 `logger.Info("Here's the number: ", 1)`
 
@@ -24,7 +24,8 @@ ANSI Logging module for Go. Each log type has it's own color!!
 etc..
 
 
-###Color codes:
+### Color codes:
+
 | Log Level | Color Code | Supposed to be |
 |-----------|------------|----------------|
 | TRACE     | 32m        | Green          |
@@ -34,5 +35,5 @@ etc..
 | WARNING   | 31m        | Red            |
 | ERROR     | 31m        | Red            |
 
-###Looks like:
+### Looks like:
 ![](https://s.alfnz.com/pUOkI.png)
