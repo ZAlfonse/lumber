@@ -1,7 +1,7 @@
 # Lumber
 ANSI Logging module for Go. Each log type has it's own color!!
 
-###Initialize a new logger like so: 
+### Initialize a new logger like so: 
 
 `logger = lumber.NewLogger(lumber.TRACE)`
 
